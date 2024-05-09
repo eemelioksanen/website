@@ -1,0 +1,21 @@
+---
+const { href, checked } = Astro.props
+
+let buttonClass =
+  'text-4xl bebas-neue-regular hover:text-green-400 transition my-auto'
+if (checked) buttonClass += ' text-green-400'
+---
+
+<div class='col-span-2 flex justify-center h-26 h-full'>
+  <a {href} class={buttonClass}>
+    <slot />
+  </a>
+</div>
+
+<style>
+  .bebas-neue-regular {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+</style>

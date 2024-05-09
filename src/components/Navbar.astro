@@ -1,0 +1,74 @@
+---
+import NavItem from './NavItem.astro'
+import Icon from './Icon.astro'
+
+const url = Astro.url.pathname
+
+const iconClass = 'transition hover:fill-green-400'
+const linkClass = 'my-auto animate-up'
+---
+
+<div
+  class='mx-auto max-w-7xl px-4 animate-opacity'
+  style='animation-delay: 100ms;'
+>
+  <div
+    class='mx-auto max-w-screen-xl grid grid-cols-1 grid-rows-4 sm:grid-rows-1 sm:grid-cols-6 gap-4 pt-1 pb-1 m-1'
+  >
+    <a href='#top' class='mx-auto'>
+      <Icon customClass={iconClass} name='apple' size={80} color='black' />
+    </a>
+    <NavItem checked={url === '#about'} customClass='animate-up' href={'#about'}
+      >About</NavItem
+    >
+    <NavItem checked={url === '#projects'} href={'#projects'}>Projects</NavItem>
+    <div class='flex gap-4 justify-end mx-auto'>
+      <a
+        class={linkClass}
+        href='https://github.com/eemelioksanen'
+        style='animation-delay: 50ms;'
+        target='_blank'
+      >
+        <Icon customClass={iconClass} color='black' name='github' size={40} />
+      </a>
+      <a
+        class={linkClass}
+        style='animation-delay: 100ms;'
+        href='https://www.linkedin.com/in/eoksanen/'
+        target='_blank'
+      >
+        <Icon customClass={iconClass} name='linkedin' size={40} color='black' />
+      </a>
+      <a
+        class={linkClass}
+        href='https://t.me/eemelioksanen'
+        style='animation-delay: 150ms;'
+        target='_blank'
+      >
+        <Icon customClass={iconClass} name='telegram' size={40} color='black' />
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bebas-neue-regular {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .animate-opacity {
+    animation: opacity-animation 0.5s ease-out forwards;
+    opacity: 0%;
+  }
+
+  @keyframes opacity-animation {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
