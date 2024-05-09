@@ -4,25 +4,7 @@ import { Image } from 'astro:assets'
 import profilePic from '../assets/me.png'
 ---
 
-<script>
-  import anime from 'animejs'
-
-  anime({
-    targets: '.fade-in-1',
-    translateY: 50,
-    opacity: [0, 1], // Animate from opacity 0 to opacity 1
-    duration: 2000,
-  })
-
-  anime({
-    targets: '.fade-in-2',
-    translateY: 50,
-    opacity: [0, 1], // Animate from opacity 0 to opacity 1
-    duration: 2500,
-  })
-</script>
-
-<div class='max-w-7xl mx-auto px-4'>
+<div class='max-w-7xl mx-auto'>
   <div class='grid sm:grid-cols-4 sm:grid-rows-1 grid-cols-1 grid-rows-2'>
     <div class='mx-auto'>
       <Image
@@ -35,10 +17,20 @@ import profilePic from '../assets/me.png'
     </div>
     <div class='col-span-3 fade-in-1'>
       <TextField>
-        Welcome to my website! If you are interested in my <a
-          class='text-green-600'
-          href='/projects'>projects</a
-        >, feel free to look at them.
+        Hey! Welcome to my website, hope you'll enjoy your stay!
+        <br />
+        I am a mathematically oriented computer science student from Espoo, Finland.
+        My interests include mathematics, theoretical computer science, web-development
+        and ML/AI.
+        <br />
+        I am currently working as an assistant research scientist at the <a
+          href='https://www.maanmittauslaitos.fi/en/research'
+          class='text-green-500'
+          target='_blank'>Finnish Geospatial Research Institute</a
+        >. I am always open to messages, so don't be afraid to <a
+          class='text-green-500'
+          href='#contact'>contact me</a
+        >!
       </TextField>
     </div>
   </div>

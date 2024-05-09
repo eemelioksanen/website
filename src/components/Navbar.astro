@@ -2,26 +2,20 @@
 import NavItem from './NavItem.astro'
 import Icon from './Icon.astro'
 
-const url = Astro.url.pathname
-
 const iconClass = 'transition hover:fill-green-400'
 const linkClass = 'my-auto animate-up'
 ---
 
-<div
-  class='mx-auto max-w-7xl px-4 animate-opacity'
-  style='animation-delay: 100ms;'
->
+<div class='mx-auto max-w-7xl animate-opacity' style='animation-delay: 100ms;'>
   <div
-    class='mx-auto max-w-screen-xl grid grid-cols-1 grid-rows-4 sm:grid-rows-1 sm:grid-cols-6 gap-4 pt-1 pb-1 m-1'
+    class='max-w-screen-xl grid grid-cols-1 grid-rows-4 sm:grid-rows-1 sm:grid-cols-8 gap-4 pt-1 pb-1 my-1 px-6'
   >
-    <a href='#top' class='mx-auto'>
+    <a href='#top' class='sm:mx-0 mx-auto flex'>
       <Icon customClass={iconClass} name='apple' size={80} color='black' />
     </a>
-    <NavItem checked={url === '#about'} customClass='animate-up' href={'#about'}
-      >About</NavItem
-    >
-    <NavItem checked={url === '#projects'} href={'#projects'}>Projects</NavItem>
+    <NavItem href={'#about'}>About</NavItem>
+    <NavItem href={'#projects'}>Projects</NavItem>
+    <NavItem href={'#academics'}>Academics</NavItem>
     <div class='flex gap-4 justify-end mx-auto'>
       <a
         class={linkClass}
