@@ -29,7 +29,7 @@ switch (lang) {
 <div
   class='h-72 flex text-left text-2xl origin-bottom-left relative rounded-2xl bg-white shadow-2xl overflow-hidden'
 >
-  <div class='w-fill p-4 relative'>
+  <div class='w-full p-4 relative'>
     <div class='w-full pb-3'>
       <a href={url} class='flex gap-2'>
         <h2 class='quicksand text-2xl font-bold text-emerald-500'>
@@ -46,7 +46,11 @@ switch (lang) {
       </div>
       <div class='my-auto pl-1' style=`color: ${color}`>{lang}</div>
     </div>
-    <a href={url} class='absolute bottom-2 right-4 h-10 flex text-lg'>
+    <a
+      href={url}
+      target='_blank'
+      class='absolute bottom-2 right-4 h-10 flex text-lg'
+    >
       <div class='pr-1 my-auto' style='color: #2600ff'>
         View source on GitHub
       </div>

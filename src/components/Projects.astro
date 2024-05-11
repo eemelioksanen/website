@@ -1,25 +1,61 @@
 ---
 import RepoCard from './RepoCard.astro'
 import musescorePic from '../assets/musescorebot.png'
+import openVaa from '../assets/openvaa.png'
+import birdnest from '../assets/birdnest.png'
 import { Image } from 'astro:assets'
 ---
 
-<div class='max-w-7xl mx-auto'>
+<div class='max-w-7xl mx-auto' id='projects'>
   <div class='justify-center flex mb-10'>
     <h1 class='bebas-neue-regular justify-center text-5xl'>projects</h1>
   </div>
-  <div>
-    <RepoCard name='test' url='dummy' lang='TypeScript'>
+  <div class='grid gap-16'>
+    <RepoCard
+      name='OpenVAA - Voting Advice Application'
+      url='https://github.com/OpenVAA/voting-advice-application'
+      lang='TypeScript'
+    >
       <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        Contributed to an open-source voting advice application over the course
+        of half a year as a part of a university course. The project is
+        organized by <a href='https://openvaa.org/' class='text-green-500'
+          >OpenVAA</a
+        >. Main technologies are Svelte, Strapi and Docker.
       </div>
-      <Image slot='image' width='300' src={musescorePic} alt={'xd'} />
+      <Image slot='image' width='300' src={openVaa} alt={'openvaa-example'} />
+    </RepoCard>
+    <RepoCard
+      name='Musescorescript'
+      url='https://github.com/eemelioksanen/musescorescript'
+      lang='Python'
+    >
+      <div>
+        A multithreaded web scraper script for downloading music sheets from
+        musescore.com.
+      </div>
+      <Image
+        slot='image'
+        width='300'
+        src={musescorePic}
+        alt={'musescorescript-example'}
+      />
+    </RepoCard>
+    <RepoCard
+      name='Birdnest'
+      url='https://github.com/eemelioksanen/birdnest'
+      lang='JavaScript'
+    >
+      <div>
+        A web-application developed for the Reaktor summer intern applications
+        2023. Frontend was done with React and Backend using Node.js.
+      </div>
+      <Image
+        slot='image'
+        width='300'
+        src={birdnest}
+        alt={'birdnnest-example'}
+      />
     </RepoCard>
   </div>
 </div>
