@@ -1,53 +1,75 @@
 ---
 import Icon from './Icon.astro'
 
-const lang = 'TypeScript'
+interface Props {
+  name: string
+  url: string
+  lang: 'TypeScript' | 'JavaScript' | 'Python'
+}
+
+const { name, url, lang } = Astro.props
 
 let color
 
 switch (lang) {
   case 'TypeScript':
-    color = 'text-blue-500'
+    color = '#3178c6'
+    break
+  case 'JavaScript':
+    color = '#f7df1e'
+    break
+  case 'Python':
+    color = '#3776ab'
     break
   default:
-    color = 'text-purple-500'
+    color = '#d400ff'
 }
 ---
 
-<a href='#xd'>
-  <div
-    class='w-96 h-96 bg-white rounded-xl shadow-2xl text-center text-2xl p-4 border-green-600 border-2 origin-bottom-left relative hover:border-purple-300 transition'
-  >
-    <h2 class='quicksand text-2xl font-bold'>my cool project</h2>
-    <div class='text-lg text-left max-h-72 overflow-hidden'>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
+<div
+  class='h-72 flex text-left text-2xl origin-bottom-left relative rounded-2xl bg-white shadow-2xl overflow-hidden'
+>
+  <div class='w-fill p-4 relative'>
+    <div class='w-full pb-3'>
+      <a href={url} class='flex gap-2'>
+        <h2 class='quicksand text-2xl font-bold text-emerald-500'>
+          {name}
+        </h2>
+      </a>
     </div>
-    <div class=`absolute bottom-0 text-lg h-10 flex ${color}`>
+    <div class='text-lg text-left max-h-72'>
+      <slot />
+    </div>
+    <div class=`absolute bottom-2 left-4 text-lg h-10 flex`>
       <div class='my-auto'>
-        <Icon name='gear' size={20} color='blue' />
+        <Icon name='gear' size={20} color={color} />
       </div>
-      <div class='my-auto pl-1'>TypeScript</div>
+      <div class='my-auto pl-1' style=`color: ${color}`>{lang}</div>
     </div>
+    <a href={url} class='absolute bottom-2 right-4 h-10 flex text-lg'>
+      <div class='pr-1 my-auto' style='color: #2600ff'>
+        View source on GitHub
+      </div>
+      <div class='my-auto'>
+        <Icon name='external_link' size={20} color={'#2600ff'} />
+      </div>
+    </a>
   </div>
-</a>
+  <div class='w-72 aspect-square rounded-r-2xl'>
+    <slot name='image' />
+  </div>
 
-<style>
-  .quicksand {
-    font-family: 'Quicksand', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-  }
+  <style>
+    .quicksand {
+      font-family: 'Quicksand', sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+    }
 
-  .bebas-neue-regular {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-</style>
+    .bebas-neue-regular {
+      font-family: 'Bebas Neue', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+</div>

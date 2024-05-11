@@ -1,10 +1,27 @@
 ---
 import RepoCard from './RepoCard.astro'
+import musescorePic from '../assets/musescorebot.png'
+import { Image } from 'astro:assets'
 ---
 
-<div>
-  <h1 class='bebas-neue-regular flex justify-center text-5xl'>projects</h1>
-  <RepoCard />
+<div class='max-w-7xl mx-auto'>
+  <div class='justify-center flex mb-10'>
+    <h1 class='bebas-neue-regular justify-center text-5xl'>projects</h1>
+  </div>
+  <div>
+    <RepoCard name='test' url='dummy' lang='TypeScript'>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </div>
+      <Image slot='image' width='300' src={musescorePic} alt={'xd'} />
+    </RepoCard>
+  </div>
 </div>
 
 <style>
