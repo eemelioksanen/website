@@ -1,0 +1,51 @@
+---
+import Icon from './Icon.astro'
+---
+
+<div class='w-full justify-center flex h-[20rem] items-center px-5'>
+  <div class='text-center quicksand text-xl'>
+    <div class='w-full flex justify-center'>
+      <Icon name='apple' color='#4b6e4b' size={50} />
+    </div>
+    <br />
+    <p class='flex items-center justify-center'>
+      Powered by <a
+        class='mt-[0.4rem]'
+        href='https://astro.build/'
+        target='_blank'
+      >
+        <Icon name='astro' size={100} /></a
+      > and <a
+        class='pl-2 pr-1 mt-[0.2rem]'
+        href='https://vercel.com/'
+        target='_blank'
+      >
+        <Icon name='vercel' color='black' size={90} /></a
+      >
+      .
+    </p>
+    <p>
+      Source code is available <a
+        class='text-green-500'
+        href='https://github.com/eemelioksanen/website'
+        target='_blank'
+      >
+        here</a
+      >.
+    </p>
+
+    <br />
+    <p>&copy Eemeli Oksanen 2024</p>
+  </div>
+</div>
+
+<p class='quicksand text-xl'></p>
+
+<style>
+  .quicksand {
+    font-family: 'Quicksand', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+</style>
