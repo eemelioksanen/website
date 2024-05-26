@@ -8,7 +8,9 @@ import { Image } from 'astro:assets'
 
 <div class='max-w-7xl mx-auto' id='projects'>
   <div class='justify-center flex mb-10'>
-    <h1 class='bebas-neue-regular justify-center text-5xl'>projects</h1>
+    <h1 class='bebas-neue-regular justify-center text-5xl animate-opacity'>
+      projects
+    </h1>
   </div>
   <div class='grid gap-16'>
     <RepoCard
@@ -50,7 +52,7 @@ import { Image } from 'astro:assets'
     >
       <div>
         A web-application developed for the Reaktor summer intern applications
-        2023. Frontend was done with React and Backend using Node.js.
+        2023. Frontend was done with React and backend using Node.js.
       </div>
       <Image
         slot='image'
@@ -63,6 +65,20 @@ import { Image } from 'astro:assets'
 </div>
 
 <style>
+  .animate-opacity {
+    animation: opacity-animation 1s ease-out forwards;
+    opacity: 0%;
+  }
+
+  @keyframes opacity-animation {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   .bebas-neue-regular {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 400;
