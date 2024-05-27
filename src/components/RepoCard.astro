@@ -28,18 +28,22 @@ switch (lang) {
 ---
 
 <div
-  class='gg animate-right h-80 sm:h-60 flex text-left text-2xl origin-bottom-left relative rounded-2xl bg-white shadow-2xl overflow-hidden mx-1 xl:mx-0'
+  class='gg animate-right h-80 sm:h-60 flex text-left text-2xl origin-bottom-left relative transition-colors duration-300 rounded-2xl bg-white shadow-2xl overflow-hidden mx-1 xl:mx-0 dark:bg-indigo-200'
   style=`animation-delay: ${delay ? delay : 0}s`
 >
   <div class='w-full p-4 relative'>
     <div class='w-full pb-3'>
       <a class='flex gap-2'>
-        <h2 class='quicksand text-2xl font-bold text-emerald-500'>
+        <h2
+          class='quicksand transition-colors duration-300 text-2xl font-bold dark:text-blue-700 text-emerald-500'
+        >
           {name}
         </h2>
       </a>
     </div>
-    <div class='text-lg text-left max-h-72 quicksand'>
+    <div
+      class='text-lg text-left max-h-72 quicksand transition-colors duration-300'
+    >
       <slot />
     </div>
     <div class=`absolute bottom-2 left-4 text-lg h-10 flex`>
@@ -53,7 +57,10 @@ switch (lang) {
       target='_blank'
       class='absolute bottom-2 right-4 h-10 flex text-lg'
     >
-      <div class='pr-1 my-auto quicksand' style='color: #2600ff'>
+      <div
+        class='pr-1 my-auto quicksand transition-colors duration-300'
+        style='color: #2600ff'
+      >
         View source on GitHub
       </div>
       <div class='my-auto'>

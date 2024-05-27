@@ -3,6 +3,12 @@ import Navbar from '../components/Navbar.astro'
 import Favicon from '../assets/favicon.svg'
 ---
 
+<script>
+  window.addEventListener('load', function () {
+    document.body.classList.remove('no-transition')
+  })
+</script>
+
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
@@ -25,7 +31,7 @@ import Favicon from '../assets/favicon.svg'
     <meta name='generator' content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body>
+  <body class='no-transition'>
     <Navbar />
     <div class='h-10'></div>
     <div>
@@ -37,5 +43,13 @@ import Favicon from '../assets/favicon.svg'
 <style>
   body {
     background: rgb(222, 249, 226);
+  }
+
+  body.dark {
+    background: rgb(37, 49, 65);
+  }
+
+  body:not(.no-transition) {
+    @apply transition-colors duration-300;
   }
 </style>
