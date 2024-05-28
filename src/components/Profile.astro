@@ -2,39 +2,45 @@
 import TextField from './TextField.astro'
 import { Image } from 'astro:assets'
 import profilePic from '../assets/me.png'
+
+const titleClass =
+  'text-2xl dark:text-indigo-100 transition-colors duration-300'
+
+const associationClass =
+  'text-green-800 dark:text-indigo-300 transition-colors duration-300'
 ---
 
 <div class='max-w-7xl mx-auto' id='about'>
-  <div class='flex flex-col xl:flex-row gap-y-10 xl:gap-y-0 gap-x-10 dire'>
+  <div
+    class='w-full col-span-3 fade-in-1 my-auto opacity-0 animate-opacity'
+    style='animation-delay: 0.2s'
+  >
     <div
-      class='sm:w-[23rem] mx-auto xl:ml-0 justify-center flex xl:mr-auto my-auto opacity-0 animate-opacity'
-      style='animation-delay: 0.1s'
+      class='xl:absolute flex xl:flex-none justify-center xl:justify-start my-10 xl:my-0'
     >
       <Image
         src={profilePic}
         alt='profile'
         width={200}
         height={200}
-        class='gg rounded-full border-4 transition-colors duration-300 border-green-500 dark:border-indigo-500 fade-in-2'
+        class='rounded-full border-4 transition-colors duration-300 border-green-500 dark:border-indigo-500 fade-in-2'
       />
     </div>
-    <div
-      class='col-span-3 fade-in-1 my-auto opacity-0 animate-opacity'
-      style='animation-delay: 0.2s'
-    >
-      <TextField>
-        Hey! Welcome to my website, hope you'll enjoy your stay!
-        <br />
-        I am a mathematically oriented computer science student at Aalto University.
-        My interests include mathematics, theoretical computer science, web-development
-        and ML/AI.
-        <br />
-        I'm currently working as an assistant research scientist at <a
-          href='https://www.maanmittauslaitos.fi/en/research'
-          class='text-green-500 dark:text-violet-800 transition-colors duration-300'
-          target='_blank'>Finnish Geospatial Research Institute</a
-        >. If you want to get in touch or just say hi, feel free to contact me!
-      </TextField>
+    <div class='w-full flex mx-auto p-1 quicksand'>
+      <div class='h-full w-1/2 justify-center my-auto text-right animate-right'>
+        <h2 class={titleClass}>BSc. Computer Science</h2>
+        <p class={associationClass}>Aalto University</p>
+      </div>
+      <div
+        class='line mx-6 w-[0.12rem] h-[10rem] transition-colors duration-300'
+      >
+      </div>
+      <div
+        class='h-full w-1/2 justify-center my-auto animate-left transition-colors duration-300'
+      >
+        <h2 class={titleClass}>Assistant Research Scientist</h2>
+        <p class={associationClass} '>Finnish Geospatial Research Institute</p>
+      </div>
     </div>
   </div>
 </div>
@@ -52,5 +58,57 @@ import profilePic from '../assets/me.png'
     100% {
       opacity: 1;
     }
+  }
+
+  .animate-left {
+    animation: left-animation 0.8s ease-out forwards;
+    right: -2.5rem;
+    position: relative;
+  }
+
+  @keyframes left-animation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-2.5rem);
+    }
+  }
+
+  .animate-right {
+    animation: right-animation 0.8s ease-out forwards;
+    left: -2.5rem;
+    position: relative;
+  }
+
+  @keyframes right-animation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(2.5rem);
+    }
+  }
+
+  .line {
+    background: linear-gradient(
+      transparent 0%,
+      rgb(4, 172, 60) 50%,
+      transparent 100%
+    );
+  }
+
+  .line:is(.dark *) {
+    background: linear-gradient(
+      transparent 0%,
+      rgb(162, 139, 247) 50%,
+      transparent 100%
+    );
+  }
+
+  .quicksand {
+    font-family: 'Quicksand', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
   }
 </style>
