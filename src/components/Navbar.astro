@@ -110,8 +110,12 @@ const social_icon_size = 34
         class='flex gap-x-4 justify-center xl:justify-end xl:pl-8 relative xl:absolute xl:left-0'
       >
         <button id='dark-mode-toggle'>
-          <Icon customClass='dark:hidden' name='moon' size={30} />
-          <Icon customClass='hidden dark:block' name='sun' size={30} />
+          <Icon
+            customClass='hidden dark:block fill-blue-300'
+            name='moon'
+            size={30}
+          />
+          <Icon customClass='dark:hidden fill-green-200' name='sun' size={30} />
         </button>
       </div>
     </div>

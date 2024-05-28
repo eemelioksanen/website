@@ -5,41 +5,42 @@ const iconSize = 100
 ---
 
 <div class='w-full justify-center flex h-[20rem] items-center px-5'>
-  <div class='text-center quicksand xl:text-xl dark:text-white'>
+  <div class='text-center quicksand xl:text-xl dark:text-indigo-300'>
     <div class='w-full flex justify-center'>
-      <Icon
-        name='apple'
-        color='#4b6e4b'
-        size={50}
-        customClass='dark:fill-indigo-400'
-      />
+      <Icon name='apple' size={50} customClass='dark:fill-indigo-300' />
     </div>
     <br />
     <p class='flex items-center justify-center'>
       Powered by
       <a class='px-1 xl:px-2' href='https://astro.build/' target='_blank'>
         <Icon
-          customClass='dark:fill-white w-16 xl:w-20'
+          customClass='dark:fill-indigo-300 w-16 xl:w-20'
           name='astro'
           size={iconSize}
         /></a
       > and <a class='px-1 xl:pl-2' href='https://vercel.com/' target='_blank'>
         <Icon
           name='vercel'
-          customClass='dark:fill-white w-16 xl:w-20'
+          customClass='dark:fill-indigo-300 w-16 xl:w-20'
           size={iconSize}
         /></a
       >
       .
     </p>
-    <p>
-      Source code is available <a
-        class='text-green-500 dark:text-violet-300'
+    <br />
+    <p class='flex items-center justify-center my-auto'>
+      <a
+        class='text-green-700 dark:text-blue-100 pr-1'
         href='https://github.com/eemelioksanen/website'
         target='_blank'
       >
-        here</a
-      >.
+        source code
+      </a>
+      <Icon
+        name='external_link'
+        customClass='stroke-green-700 dark:stroke-blue-100'
+        size={15}
+      />
     </p>
 
     <br />
