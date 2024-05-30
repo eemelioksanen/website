@@ -6,86 +6,71 @@ import birdnest from '../assets/birdnest.png'
 import { Image } from 'astro:assets'
 ---
 
-<div class='max-w-7xl mx-auto' id='projects'>
-  <div class='justify-center flex mb-10'>
-    <h1
-      class='dark:text-blue-50 bebas-neue-regular transition-colors duration-300 justify-center text-5xl animate-opacity'
-    >
-      projects
-    </h1>
-  </div>
-  <div class='grid gap-16'>
-    <RepoCard
-      name='OpenVAA - Voting Advice Application'
-      url='https://github.com/OpenVAA/voting-advice-application'
-      lang='TypeScript'
-    >
-      <div>
-        Contributed to an open-source voting advice application over the course
-        of half a year as a part of a university course. The project is
-        organized by <a
-          href='https://openvaa.org/'
-          class='text-green-500 dark:text-blue-500 transition-colors duration-300'
-          >OpenVAA</a
-        >. Main technologies are Svelte, Strapi and Docker.
-      </div>
-      <Image slot='image' width='300' src={openVaa} alt={'openvaa-example'} />
-    </RepoCard>
-    <RepoCard
-      name='Musescorescript'
-      url='https://github.com/eemelioksanen/musescorescript'
-      lang='Python'
-      delay={0.1}
-    >
-      <div>
-        A multithreaded web scraper script for downloading music sheets from
-        musescore.com.
-      </div>
-      <Image
-        slot='image'
-        width='300'
-        src={musescorePic}
-        alt={'musescorescript-example'}
-      />
-    </RepoCard>
-    <RepoCard
-      name='Birdnest'
-      url='https://github.com/eemelioksanen/birdnest'
-      lang='JavaScript'
-      delay={0.2}
-    >
-      <div>
-        A web-application developed for the Reaktor summer intern applications
-        2023. Frontend was done with React and backend using Node.js.
-      </div>
-      <Image
-        slot='image'
-        width='300'
-        src={birdnest}
-        alt={'birdnnest-example'}
-      />
-    </RepoCard>
-  </div>
+<div class='mx-auto max-w-7xl' id='projects'>
+	<div class='mb-10 flex justify-center'>
+		<h1
+			class='bebas-neue-regular animate-opacity justify-center text-5xl transition-colors duration-300 dark:text-blue-50'
+		>
+			projects
+		</h1>
+	</div>
+	<div class='grid gap-16'>
+		<RepoCard
+			name='OpenVAA - Voting Advice Application'
+			url='https://github.com/OpenVAA/voting-advice-application'
+			lang='TypeScript'
+		>
+			<div>
+				Contributed to an open-source voting advice application over the course of half a year as a
+				part of a university course. The project is organized by <a
+					href='https://openvaa.org/'
+					class='text-green-500 transition-colors duration-300 dark:text-blue-500'>OpenVAA</a
+				>. Main technologies are Svelte, Strapi and Docker.
+			</div>
+			<Image slot='image' width='300' src={openVaa} alt={'openvaa-example'} />
+		</RepoCard>
+		<RepoCard
+			name='Musescorescript'
+			url='https://github.com/eemelioksanen/musescorescript'
+			lang='Python'
+			delay={0.1}
+		>
+			<div>A multithreaded web scraper script for downloading music sheets from musescore.com.</div>
+			<Image slot='image' width='300' src={musescorePic} alt={'musescorescript-example'} />
+		</RepoCard>
+		<RepoCard
+			name='Birdnest'
+			url='https://github.com/eemelioksanen/birdnest'
+			lang='JavaScript'
+			delay={0.2}
+		>
+			<div>
+				A web-application developed for the Reaktor summer intern applications 2023. Frontend was
+				done with React and backend using Node.js.
+			</div>
+			<Image slot='image' width='300' src={birdnest} alt={'birdnnest-example'} />
+		</RepoCard>
+	</div>
 </div>
 
 <style>
-  .animate-opacity {
-    animation: opacity-animation 1s ease-out forwards;
-    opacity: 0%;
-  }
+	.animate-opacity {
+		animation: opacity-animation 1s ease-out forwards;
+		opacity: 0%;
+	}
 
-  @keyframes opacity-animation {
-    0% {
-      opacity: 0%;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+	@keyframes opacity-animation {
+		0% {
+			opacity: 0%;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 
-  .bebas-neue-regular {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+	.bebas-neue-regular {
+		font-family: 'Bebas Neue', sans-serif;
+		font-weight: 400;
+		font-style: normal;
+	}
 </style>

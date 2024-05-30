@@ -2,10 +2,10 @@
 import Icon from './Icon.astro'
 
 interface Props {
-  name: string
-  url: string
-  lang: 'TypeScript' | 'JavaScript' | 'Python'
-  delay?: number
+	name: string
+	url: string
+	lang: 'TypeScript' | 'JavaScript' | 'Python'
+	delay?: number
 }
 
 const { name, url, lang, delay } = Astro.props
@@ -13,94 +13,85 @@ const { name, url, lang, delay } = Astro.props
 let color
 
 switch (lang) {
-  case 'TypeScript':
-    color = '#3178c6'
-    break
-  case 'JavaScript':
-    color = '#c99402'
-    break
-  case 'Python':
-    color = '#3776ab'
-    break
-  default:
-    color = '#d400ff'
+	case 'TypeScript':
+		color = '#3178c6'
+		break
+	case 'JavaScript':
+		color = '#c99402'
+		break
+	case 'Python':
+		color = '#3776ab'
+		break
+	default:
+		color = '#d400ff'
 }
 ---
 
 <div
-  class='gg animate-right h-80 sm:h-60 flex text-left text-2xl origin-bottom-left relative transition-colors duration-300 rounded-2xl bg-white shadow-2xl overflow-hidden mx-1 xl:mx-0 dark:bg-indigo-200'
-  style=`animation-delay: ${delay ? delay : 0}s`
+	class='gg animate-right relative mx-1 flex h-80 origin-bottom-left overflow-hidden rounded-2xl bg-white text-left text-2xl shadow-2xl transition-colors duration-300 dark:bg-indigo-200 sm:h-60 xl:mx-0'
+	style=`animation-delay: ${delay ? delay : 0}s`
 >
-  <div class='w-full p-4 relative'>
-    <div class='w-full pb-3'>
-      <a class='flex gap-2'>
-        <h2
-          class='quicksand transition-colors duration-300 text-2xl font-bold dark:text-blue-700 text-emerald-500'
-        >
-          {name}
-        </h2>
-      </a>
-    </div>
-    <div
-      class='text-lg text-left max-h-72 quicksand transition-colors duration-300'
-    >
-      <slot />
-    </div>
-    <div class=`absolute bottom-2 left-4 text-lg h-10 flex`>
-      <div class='my-auto'>
-        <Icon name='gear' size={20} color={color} />
-      </div>
-      <div class='my-auto pl-1' style=`color: ${color}`>{lang}</div>
-    </div>
-    <a
-      href={url}
-      target='_blank'
-      class='absolute bottom-2 right-4 h-10 flex text-lg'
-    >
-      <div
-        class='pr-1 my-auto quicksand transition-colors duration-300'
-        style='color: #2600ff'
-      >
-        View source on GitHub
-      </div>
-      <div class='my-auto'>
-        <Icon name='external_link' customClass='stroke-[#2600ff]' size={15} />
-      </div>
-    </a>
-  </div>
-  <div
-    class='absolute md:static right-0 bottom-0 opacity-0 md:opacity-100 md:blur-none blur-sm -z-10 h-full aspect-square rounded-r-2xl'
-  >
-    <slot name='image' />
-  </div>
+	<div class='relative w-full p-4'>
+		<div class='w-full pb-3'>
+			<a class='flex gap-2'>
+				<h2
+					class='quicksand text-2xl font-bold text-emerald-500 transition-colors duration-300 dark:text-blue-700'
+				>
+					{name}
+				</h2>
+			</a>
+		</div>
+		<div class='quicksand max-h-72 text-left text-lg transition-colors duration-300'>
+			<slot />
+		</div>
+		<div class=`absolute bottom-2 left-4 text-lg h-10 flex`>
+			<div class='my-auto'>
+				<Icon name='gear' size={20} color={color} />
+			</div>
+			<div class='my-auto pl-1' style=`color: ${color}`>{lang}</div>
+		</div>
+		<a href={url} target='_blank' class='absolute bottom-2 right-4 flex h-10 text-lg'>
+			<div class='quicksand my-auto pr-1 transition-colors duration-300' style='color: #2600ff'>
+				View source on GitHub
+			</div>
+			<div class='my-auto'>
+				<Icon name='external_link' customClass='stroke-[#2600ff]' size={15} />
+			</div>
+		</a>
+	</div>
+	<div
+		class='absolute bottom-0 right-0 -z-10 aspect-square h-full rounded-r-2xl opacity-0 blur-sm md:static md:opacity-100 md:blur-none'
+	>
+		<slot name='image' />
+	</div>
 </div>
 
 <style>
-  .quicksand {
-    font-family: 'Quicksand', sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-  }
+	.quicksand {
+		font-family: 'Quicksand', sans-serif;
+		font-optical-sizing: auto;
+		font-style: normal;
+	}
 
-  .bebas-neue-regular {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+	.bebas-neue-regular {
+		font-family: 'Bebas Neue', sans-serif;
+		font-weight: 400;
+		font-style: normal;
+	}
 
-  .animate-right {
-    position: relative;
-    opacity: 0;
-    left: -10rem;
-    animation: animation-right 0.6s ease-out forwards;
-  }
-  @keyframes animation-right {
-    50 % {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(10rem);
-    }
-  }
+	.animate-right {
+		position: relative;
+		opacity: 0;
+		left: -10rem;
+		animation: animation-right 0.6s ease-out forwards;
+	}
+	@keyframes animation-right {
+		50 % {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(10rem);
+		}
+	}
 </style>

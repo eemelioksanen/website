@@ -1,34 +1,32 @@
 <div
-  class='flex-col dark:text-blue-50 text-center transition-colors duration-300 poetsen-one-regular animate-opacity xl:py-10'
+	class='poetsen-one-regular animate-opacity flex-col text-center transition-colors duration-300 dark:text-blue-50 xl:py-10'
 >
-  <div class='w-max mx-auto'>
-    <h1 class='fadingEffect text-4xl xl:text-6xl'>Eemeli Oksanen</h1>
-    <div
-      class='text-right text-green-800 dark:text-indigo-400 transition-colors duration-300'
-    >
-      <p class='text-xl'>Software Engineer</p>
-    </div>
-  </div>
+	<div class='mx-auto w-max'>
+		<h1 class='fadingEffect text-4xl xl:text-6xl'>Eemeli Oksanen</h1>
+		<div class='text-right text-green-800 transition-colors duration-300 dark:text-indigo-400'>
+			<p class='text-xl'>Software Engineer</p>
+		</div>
+	</div>
 </div>
 
 <style>
-  .animate-opacity {
-    animation: opacity-animation 1s ease-out forwards;
-    opacity: 0%;
-  }
+	.animate-opacity {
+		animation: opacity-animation 1s ease-out forwards;
+		opacity: 0%;
+	}
 
-  @keyframes opacity-animation {
-    0% {
-      opacity: 0%;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+	@keyframes opacity-animation {
+		0% {
+			opacity: 0%;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 
-  .poetsen-one-regular {
-    font-family: 'Poetsen One', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+	.poetsen-one-regular {
+		font-family: 'Poetsen One', sans-serif;
+		font-weight: 400;
+		font-style: normal;
+	}
 </style>
