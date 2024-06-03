@@ -2,6 +2,7 @@
 import RepoCard from './RepoCard.astro'
 import musescorePic from '../assets/musescorebot.png'
 import openVaa from '../assets/openvaa.png'
+import Icon from './Icon.astro'
 import birdnest from '../assets/birdnest.png'
 import { Image } from 'astro:assets'
 ---
@@ -27,7 +28,8 @@ import { Image } from 'astro:assets'
 					class='text-green-500 transition-colors duration-300 dark:text-blue-500'>OpenVAA</a
 				>. Main technologies are Svelte, Strapi and Docker.
 			</div>
-			<Image slot='image' width='300' src={openVaa} alt={'openvaa-example'} />
+
+			<Icon name='vote' slot='image' customClass='dark:fill-sky-200  fill-black ' />
 		</RepoCard>
 		<RepoCard
 			name='Musescorescript'
@@ -36,7 +38,12 @@ import { Image } from 'astro:assets'
 			delay={0.1}
 		>
 			<div>A multithreaded web scraper script for downloading music sheets from musescore.com.</div>
-			<Image slot='image' width='300' src={musescorePic} alt={'musescorescript-example'} />
+
+			<Icon
+				name='note'
+				slot='image'
+				customClass='dark:fill-sky-200 dark:stroke-sky-200 fill-black stroke-black'
+			/>
 		</RepoCard>
 		<RepoCard
 			name='Birdnest'
@@ -48,7 +55,8 @@ import { Image } from 'astro:assets'
 				A web-application developed for the Reaktor summer intern applications 2023. Frontend was
 				done with React and backend using Node.js.
 			</div>
-			<Image slot='image' width='300' src={birdnest} alt={'birdnnest-example'} />
+
+			<Icon slot='image' name='drone' customClass='dark:fill-sky-200 fill-black' />
 		</RepoCard>
 	</div>
 </div>

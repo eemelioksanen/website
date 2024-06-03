@@ -5,29 +5,45 @@ const iconSize = 100
 ---
 
 <div class='flex h-[20rem] w-full items-center justify-center px-5'>
-	<div class='quicksand text-center dark:text-indigo-300 xl:text-xl'>
+	<div class='quicksand text-center transition-colors duration-300 dark:text-indigo-300 xl:text-xl'>
 		<div class='flex w-full justify-center'>
-			<Icon name='apple' size={50} customClass='dark:fill-indigo-300' />
+			<Icon
+				name='apple'
+				size={50}
+				customClass='dark:fill-indigo-300 transition-colors duration-300'
+			/>
 		</div>
 		<br />
 		<p class='flex items-center justify-center'>
 			Powered by
 			<a class='px-1 xl:px-2' href='https://astro.build/' target='_blank'>
-				<Icon customClass='dark:fill-indigo-300 w-16 xl:w-20' name='astro' size={iconSize} /></a
+				<Icon
+					customClass='dark:fill-indigo-300 w-16 xl:w-20 transition-colors duration-300'
+					name='astro'
+					size={iconSize}
+				/></a
 			> and <a class='px-1 xl:pl-2' href='https://vercel.com/' target='_blank'>
-				<Icon name='vercel' customClass='dark:fill-indigo-300 w-16 xl:w-20' size={iconSize} /></a
+				<Icon
+					name='vercel'
+					customClass='dark:fill-indigo-300 w-16 xl:w-20 transition-colors duration-300'
+					size={iconSize}
+				/></a
 			>
 		</p>
 
 		<p class='my-auto flex items-center justify-center'>
 			<a
-				class='pr-1 text-green-700 dark:text-blue-100'
+				class='pr-1 text-green-700 transition-colors duration-300 dark:text-blue-100'
 				href='https://github.com/eemelioksanen/website'
 				target='_blank'
 			>
 				source code
 			</a>
-			<Icon name='external_link' customClass='stroke-green-700 dark:stroke-blue-100' size={15} />
+			<Icon
+				name='external_link'
+				customClass='stroke-green-700 dark:stroke-blue-100 transition-colors duration-150'
+				size={15}
+			/>
 		</p>
 
 		<br />
