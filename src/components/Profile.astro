@@ -15,13 +15,15 @@ const associationClass =
 		style='animation-delay: 0.2s'
 	>
 		<div class='my-10 flex justify-center xl:absolute xl:my-0 xl:flex-none xl:justify-start'>
-			<Image
-				src={profilePic}
-				alt='profile'
-				width={200}
-				height={200}
-				class='fade-in-2 rounded-full border-4 border-green-500 transition-colors duration-300 dark:border-indigo-500'
-			/>
+			<div class='profile-bg h-full rounded-full p-[0.15rem]'>
+				<Image
+					src={profilePic}
+					alt='profile'
+					width='100'
+					height='100'
+					class='fade-in-2 h-[13rem] w-[13rem] rounded-full transition-colors duration-300'
+				/>
+			</div>
 		</div>
 		<div class='quicksand mx-auto flex w-full p-1'>
 			<div class='animate-right my-auto h-full w-1/2 justify-center text-right'>
@@ -94,5 +96,29 @@ const associationClass =
 		font-family: 'Quicksand', sans-serif;
 		font-optical-sizing: auto;
 		font-style: normal;
+	}
+
+	@property --myColor1 {
+		syntax: '<color>';
+		initial-value: green;
+		inherits: false;
+	}
+
+	@property --myColor2 {
+		syntax: '<color>';
+		initial-value: rgb(228, 255, 237);
+		inherits: false;
+	}
+
+	.profile-bg:is(.dark *) {
+		--myColor1: rgb(0, 85, 255);
+		--myColor2: magenta;
+	}
+
+	.profile-bg {
+		background: linear-gradient(145deg, var(--myColor1), var(--myColor2) 100%);
+		transition:
+			--myColor1 0.3s,
+			--myColor2 0.3s;
 	}
 </style>

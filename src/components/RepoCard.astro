@@ -28,8 +28,8 @@ switch (lang) {
 ---
 
 <div class='flex w-full justify-center xl:px-[5rem]'>
-	<div
-		class='gg animate-right relative mx-1 flex h-80 w-full origin-bottom-left overflow-hidden rounded-2xl bg-white text-left text-2xl shadow-2xl transition-colors duration-300 dark:bg-indigo-900 dark:bg-opacity-20 dark:text-indigo-300 sm:h-60 xl:mx-0'
+	<divd
+		class='animate-right relative flex h-80 w-full origin-bottom-left overflow-hidden rounded-br-3xl rounded-tl-3xl bg-white text-left text-2xl shadow-2xl transition-colors duration-300 dark:bg-indigo-950 dark:text-indigo-300 sm:h-60 xl:mx-0'
 		style=`animation-delay: ${delay ? delay : 0}s`
 	>
 		<div class='relative w-full p-4'>
@@ -70,35 +70,35 @@ switch (lang) {
 		<div class='hidden w-[20rem] justify-center align-middle md:flex'>
 			<slot name='image' />
 		</div>
-	</div>
 
-	<style>
-		.quicksand {
-			font-family: 'Quicksand', sans-serif;
-			font-optical-sizing: auto;
-			font-style: normal;
-		}
+		<style>
+			.quicksand {
+				font-family: 'Quicksand', sans-serif;
+				font-optical-sizing: auto;
+				font-style: normal;
+			}
 
-		.bebas-neue-regular {
-			font-family: 'Bebas Neue', sans-serif;
-			font-weight: 400;
-			font-style: normal;
-		}
+			.bebas-neue-regular {
+				font-family: 'Bebas Neue', sans-serif;
+				font-weight: 400;
+				font-style: normal;
+			}
 
-		.animate-right {
-			position: relative;
-			opacity: 0;
-			left: -10rem;
-			animation: animation-right 0.6s ease-out forwards;
-		}
-		@keyframes animation-right {
-			50 % {
+			.animate-right {
+				position: relative;
 				opacity: 0;
+				left: -10rem;
+				animation: animation-right 0.6s ease-out forwards;
 			}
-			100% {
-				opacity: 1;
-				transform: translateX(10rem);
+			@keyframes animation-right {
+				50 % {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+					transform: translateX(10rem);
+				}
 			}
-		}
-	</style>
+		</style>
+	</divd>
 </div>
