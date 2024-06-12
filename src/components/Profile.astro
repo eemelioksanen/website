@@ -98,16 +98,14 @@ const associationClass =
 		font-style: normal;
 	}
 
-	@property --myColor1 {
-		syntax: '<color>';
-		initial-value: green;
-		inherits: false;
+	:root {
+		--myColor1: green;
+		--myColor2: rgb(228, 255, 237);
 	}
 
-	@property --myColor2 {
-		syntax: '<color>';
-		initial-value: rgb(228, 255, 237);
-		inherits: false;
+	.dark {
+		--myColor1: rgb(0, 85, 255);
+		--myColor2: magenta;
 	}
 
 	.profile-bg:is(.dark *) {
@@ -118,6 +116,9 @@ const associationClass =
 	.profile-bg {
 		background: linear-gradient(145deg, var(--myColor1), var(--myColor2) 100%);
 		transition:
+			--myColor1 0.3s,
+			--myColor2 0.3s;
+		-moz-transition:
 			--myColor1 0.3s,
 			--myColor2 0.3s;
 	}
