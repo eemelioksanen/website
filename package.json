@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "eemelioksanen.com",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,15 +11,15 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.6.0",
-    "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.6.0",
-    "astro": "^4.8.1",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5"
+    "astro": "^4.8.1"
   },
   "devDependencies": {
+    "@astrojs/tailwind": "^5.1.0",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.14.0",
-    "prettier-plugin-tailwindcss": "^0.6.0"
+    "prettier-plugin-tailwindcss": "^0.6.0",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.4.5"
   }
 }
