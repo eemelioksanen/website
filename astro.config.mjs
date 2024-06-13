@@ -5,9 +5,9 @@ import vercel from '@astrojs/vercel/static'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()],
-  output: 'static',
-  adapter: vercel({
-    imageService: true,
-  }),
+	integrations: [tailwind()],
+	output: 'server',
+	adapter: vercel({
+		imageService: true
+	})
 })
