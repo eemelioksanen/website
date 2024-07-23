@@ -1,5 +1,4 @@
 ---
-import TextField from './TextField.astro'
 import { Image } from 'astro:assets'
 import profilePic from '../assets/me.png'
 
@@ -11,11 +10,11 @@ const associationClass =
 
 <div class='mx-auto max-w-6xl' id='about'>
 	<div
-		class='fade-in-1 animate-opacity col-span-3 my-auto w-full opacity-0'
+		class='fade-in-1 animate-opacity py-au col-span-3 justify-center xl:h-[13.15rem]'
 		style='animation-delay: 0.2s'
 	>
-		<div class='my-10 flex justify-center xl:absolute xl:my-0 xl:flex-none xl:justify-start'>
-			<div class='profile-bg h-full rounded-full p-[0.15rem]'>
+		<div class='w-fu flex justify-center xl:my-0 xl:flex-none xl:justify-normal'>
+			<div class='profile-bg w-fit rounded-full p-[0.15rem] xl:absolute'>
 				<Image
 					src={profilePic}
 					alt='profile'
@@ -25,13 +24,14 @@ const associationClass =
 				/>
 			</div>
 		</div>
-		<div class='quicksand mx-auto flex w-full p-1'>
-			<div class='animate-right my-auto h-full w-1/2 justify-center text-right'>
+		<div class='h-[2rem] xl:h-0'></div>
+		<div class='quicksand flex h-full w-full items-center p-1'>
+			<div class='animate-right w-1/2 items-center text-right'>
 				<h2 class={titleClass}>BSc. Computer Science</h2>
 				<p class={associationClass}>Aalto University</p>
 			</div>
 			<div class='line mx-6 h-[10rem] w-[0.12rem] transition-colors duration-300'></div>
-			<div class='animate-left my-auto h-full w-1/2 justify-center transition-colors duration-300'>
+			<div class='animate-left w-1/2 justify-center transition-colors duration-300'>
 				<h2 class={titleClass}>Assistant Research Scientist</h2>
 				<p class={associationClass} '>Finnish Geospatial Research Institute</p>
 			</div>

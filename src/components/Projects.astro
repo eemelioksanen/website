@@ -1,13 +1,9 @@
 ---
 import RepoCard from './RepoCard.astro'
-import musescorePic from '../assets/musescorebot.png'
-import openVaa from '../assets/openvaa.png'
 import Icon from './Icon.astro'
-import birdnest from '../assets/birdnest.png'
-import { Image } from 'astro:assets'
 ---
 
-<div class='mx-auto max-w-7xl' id='projects'>
+<div class='mx-auto max-w-7xl px-1 xl:px-0' id='projects'>
 	<div class='mb-10 flex justify-center'>
 		<h1
 			class='bebas-neue-regular animate-opacity justify-center text-5xl transition-colors duration-300 dark:text-blue-50'
@@ -15,7 +11,7 @@ import { Image } from 'astro:assets'
 			projects
 		</h1>
 	</div>
-	<div class='grid gap-16'>
+	<div class='grid grid-cols-2 gap-10 px-4'>
 		<RepoCard
 			name='OpenVAA - Voting Advice Application'
 			url='https://github.com/OpenVAA/voting-advice-application'
