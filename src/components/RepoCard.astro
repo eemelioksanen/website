@@ -3,8 +3,8 @@ import Icon from './Icon.astro'
 
 interface Props {
 	name: string
-	url: string
-	lang: 'TypeScript' | 'JavaScript' | 'Python'
+	url?: string
+	lang: 'TypeScript' | 'JavaScript' | 'Python' | string
 	delay?: number
 }
 
@@ -23,13 +23,13 @@ switch (lang) {
 		color = '#3776ab'
 		break
 	default:
-		color = '#d400ff'
+		color = '#00a9cf'
 }
 ---
 
 <div class='flex justify-center'>
 	<div
-		class='animate-right box-shadow relative flex h-[25rem] origin-bottom-left overflow-hidden rounded-br-3xl rounded-tl-3xl bg-white text-left text-2xl blur-none transition-colors duration-300 dark:bg-indigo-950 dark:text-indigo-300 xl:mx-0'
+		class='animate-shadowColor animate-right relative flex min-h-[25rem] origin-bottom-left overflow-hidden rounded-br-3xl rounded-tl-3xl bg-white text-left text-2xl shadow-[0.55rem_0.55rem_0_rgba(0,40,23,0.2)] blur-none transition-colors duration-300 dark:bg-indigo-900 dark:text-indigo-300 dark:shadow-[0.5rem_0.5rem_0_rgba(0,0,0,0.2)] xl:mx-0'
 		style=`animation-delay: ${delay ? delay : 0}s`
 	>
 		<div class='relative w-full p-4'>
@@ -42,7 +42,7 @@ switch (lang) {
 					</h2>
 				</a>
 			</div>
-			<div class='quicksand max-h-72 text-left text-lg'>
+			<div class='quicksand mb-6 text-left text-lg xl:mb-0'>
 				<slot />
 			</div>
 			<div class=`absolute bottom-2 left-4 text-lg h-10 flex`>
@@ -52,21 +52,23 @@ switch (lang) {
 				<div class='my-auto pl-1' style=`color: ${color}`>{lang}</div>
 			</div>
 		</div>
-		<a href={url} target='_blank' class='absolute bottom-2 right-4 flex h-10 text-lg'>
-			<div
-				class='quicksand my-auto pr-1 text-blue-700 transition-colors duration-300 dark:text-blue-300'
-			>
-				<p class='hidden sm:block'>View source on GitHub</p>
-				<p class='block sm:hidden'>Source</p>
-			</div>
-			<div class='my-auto'>
-				<Icon
-					name='external_link'
-					customClass='stroke-blue-700 dark:stroke-blue-300 transition-colors duration-300'
-					size={15}
-				/>
-			</div>
-		</a>
+		{
+			url ? (
+				<a href={url} target='_blank' class='absolute bottom-2 right-4 flex h-10 text-lg'>
+					<div class='quicksand my-auto pr-1 text-blue-700 transition-colors duration-300 dark:text-blue-300'>
+						<p class='hidden sm:block'>View source on GitHub</p>
+						<p class='block sm:hidden'>Source</p>
+					</div>
+					<div class='my-auto'>
+						<Icon
+							name='external_link'
+							customClass='stroke-blue-700 dark:stroke-blue-300 transition-colors duration-300'
+							size={15}
+						/>
+					</div>
+				</a>
+			) : null
+		}
 	</div>
 </div>
 

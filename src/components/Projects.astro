@@ -1,6 +1,8 @@
 ---
 import RepoCard from './RepoCard.astro'
 import Icon from './Icon.astro'
+
+const linkClass = 'text-green-500 transition-colors duration-300 dark:text-blue-500'
 ---
 
 <div class='mx-auto max-w-7xl px-1 xl:px-0' id='projects'>
@@ -21,11 +23,29 @@ import Icon from './Icon.astro'
 				Contributed to an open-source voting advice application over the course of half a year as a
 				part of a university course. The project is organized by <a
 					href='https://openvaa.org/'
-					class='text-green-500 transition-colors duration-300 dark:text-blue-500'>OpenVAA</a
-				>. Main technologies are Svelte, Strapi and Docker.
+					class={linkClass}>OpenVAA</a
+				>. Main technologies used are Svelte, Strapi and Docker.
 			</div>
 
-			<Icon name='vote' slot='image' customClass='dark:fill-sky-200  fill-black ' />
+			<Icon name='vote' slot='image' customClass='dark:fill-sky-200 fill-black ' />
+		</RepoCard>
+		<RepoCard name='FireMan Situational Awareness' lang='Python, TypeScript' delay={0.3}>
+			<div>
+				During the summers of 2023 and 2024 at <a
+					class={linkClass}
+					href='https://www.maanmittauslaitos.fi/tutkimus'>FGI</a
+				>, I developed a real-time thermal drone image processing pipeline to monitor forest fires.
+				The project had an emphasis on the backend, but I also developed a simple frontend for the
+				software. The web-application can be viewed <a
+					href='https://fireman.fgidronecloud.fi/'
+					class={linkClass}>here</a
+				>.
+				<br />
+				Main technologies include Apache Airflow, Apache HTTP server, CSC S3 cloud services, Docker and
+				Linux.
+			</div>
+
+			<Icon slot='image' name='drone' customClass='dark:fill-sky-200 fill-black' />
 		</RepoCard>
 		<RepoCard
 			name='Musescorescript'
