@@ -3,6 +3,8 @@ import RepoCard from './RepoCard.astro'
 import Icon from './Icon.astro'
 
 const linkClass = 'text-green-500 transition-colors duration-300 dark:text-blue-500'
+var delay = 0 // init delay to 0
+const getDelay = () => 0.1 * delay++ // return current delay and increment by 1§
 ---
 
 <div class='mx-auto max-w-7xl px-1 xl:px-0' id='projects'>
@@ -18,6 +20,7 @@ const linkClass = 'text-green-500 transition-colors duration-300 dark:text-blue-
 			name='OpenVAA - Voting Advice Application'
 			url='https://github.com/OpenVAA/voting-advice-application'
 			lang='TypeScript'
+			delay={getDelay()}
 		>
 			<div>
 				Contributed to an open-source voting advice application over the course of half a year as a
@@ -29,7 +32,7 @@ const linkClass = 'text-green-500 transition-colors duration-300 dark:text-blue-
 
 			<Icon name='vote' slot='image' customClass='dark:fill-sky-200 fill-black ' />
 		</RepoCard>
-		<RepoCard name='FireMan Situational Awareness' lang='Python, TypeScript' delay={0.3}>
+		<RepoCard name='FireMan Situational Awareness' lang='Python, TypeScript' delay={getDelay()}>
 			<div>
 				During the summers of 2023 and 2024 at <a
 					class={linkClass}
@@ -51,7 +54,7 @@ const linkClass = 'text-green-500 transition-colors duration-300 dark:text-blue-
 			name='Musescorescript'
 			url='https://github.com/eemelioksanen/musescorescript'
 			lang='Python'
-			delay={0.1}
+			delay={getDelay()}
 		>
 			<div>A multithreaded web scraper script for downloading music sheets from musescore.com.</div>
 
@@ -65,7 +68,7 @@ const linkClass = 'text-green-500 transition-colors duration-300 dark:text-blue-
 			name='Birdnest'
 			url='https://github.com/eemelioksanen/birdnest'
 			lang='JavaScript'
-			delay={0.2}
+			delay={getDelay()}
 		>
 			<div>
 				A web-application developed for the Reaktor summer intern applications 2023. Frontend was
