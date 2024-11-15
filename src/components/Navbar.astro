@@ -1,10 +1,18 @@
 ---
 import Icon from './Icon.astro'
 
-const iconClass = 'transition dark:hover:fill-white hover:fill-green-400 dark:fill-indigo-400'
+const animationClass = 'transition duration-300 hover:-translate-y-1'
+const iconClass =
+	'dark:hover:fill-white hover:fill-emerald-400 dark:fill-indigo-400' + ' ' + animationClass
+const emailIconClass =
+	'transition stroke-black dark:stroke-indigo-400 dark:hover:stroke-white hover:stroke-emerald-400' +
+	' ' +
+	animationClass
+const logoClass =
+	'transition duration-300 dark:fill-indigo-400 dark:hover:fill-white stroke-black hover:fill-emerald-400'
 const linkClass = 'my-auto animate-up'
 
-const social_icon_size = 34
+const socialIconSize = 34
 ---
 
 <script>
@@ -49,11 +57,7 @@ const social_icon_size = 34
 		>
 			<div class='hidden justify-center xl:flex'>
 				<a class={linkClass} href='#top' style='animation-delay: 50ms;'>
-					<Icon
-						customClass='transition dark:fill-indigo-400 dark:hover:fill-white stroke-black hover:fill-green-400'
-						name='apple'
-						size={50}
-					/>
+					<Icon customClass={logoClass} name='apple' size={50} />
 				</a>
 			</div>
 			<div class='flex gap-x-4'>
@@ -71,11 +75,7 @@ const social_icon_size = 34
 					style='animation-delay: 50ms;'
 					target='_blank'
 				>
-					<Icon
-						customClass='transition stroke-black dark:stroke-indigo-400 dark:hover:stroke-white hover:stroke-green-400'
-						name='email'
-						size={social_icon_size}
-					/>
+					<Icon customClass={emailIconClass} name='email' size={socialIconSize} />
 				</a>
 				<a
 					class={linkClass}
@@ -83,7 +83,7 @@ const social_icon_size = 34
 					style='animation-delay: 50ms;'
 					target='_blank'
 				>
-					<Icon customClass={iconClass} name='github' size={social_icon_size} />
+					<Icon customClass={iconClass} name='github' size={socialIconSize} />
 				</a>
 				<a
 					class={linkClass}
@@ -91,7 +91,7 @@ const social_icon_size = 34
 					href='https://www.linkedin.com/in/eoksanen/'
 					target='_blank'
 				>
-					<Icon customClass={iconClass} name='linkedin' size={social_icon_size} color='black' />
+					<Icon customClass={iconClass} name='linkedin' size={socialIconSize} color='black' />
 				</a>
 				<a
 					class={linkClass}
@@ -99,7 +99,7 @@ const social_icon_size = 34
 					style='animation-delay: 150ms;'
 					target='_blank'
 				>
-					<Icon customClass={iconClass} name='telegram' size={social_icon_size} color='black' />
+					<Icon customClass={iconClass} name='telegram' size={socialIconSize} color='black' />
 				</a>
 			</div>
 		</div>
