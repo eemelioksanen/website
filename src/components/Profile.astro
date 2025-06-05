@@ -5,7 +5,7 @@ import profilePic from '../assets/me.png'
 const titleClass = 'text-xl xl:text-2xl dark:text-indigo-100 transition-colors duration-300'
 
 const associationClass =
-	'text-sm xl:text:md text-green-800 dark:text-indigo-300 transition-colors duration-300'
+	'text-md xl:text:md text-green-800 dark:text-indigo-300 transition-colors duration-300'
 ---
 
 <div class='mx-auto max-w-6xl' id='about'>
@@ -28,12 +28,12 @@ const associationClass =
 		<div class='quicksand mx-auto flex h-full max-w-[50rem] items-center p-1'>
 			<div class='animate-right w-1/2 items-center text-right'>
 				<h2 class={titleClass}>ML, AI & Data Science</h2>
-				<p class={associationClass}>Aalto University</p>
+				<a href='https://www.aalto.fi/en' class={associationClass}>Aalto University</a>
 			</div>
 			<div class='line mx-6 h-[10rem] w-[0.12rem] transition-colors duration-300'></div>
 			<div class='animate-left w-1/2 justify-center transition-colors duration-300'>
-				<h2 class={titleClass}>Currently looking for interesting opportunities</h2>
-				<p class={associationClass}></p>
+				<h2 class={titleClass}>Software Developer</h2>
+				<a href='http://hoxhunt.com' class={associationClass}>Hoxhunt</a>
 			</div>
 		</div>
 	</div>
